@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 const Statistics = ({ good, neutral, bad }) => {
   const all = good + neutral + bad
   const average = all === 0 ? 0 : (good - bad) / all
+  const positivePercent = all === 0 ? 0 : (100.0 * good) / all
 
   return (
     <>
@@ -12,6 +13,7 @@ const Statistics = ({ good, neutral, bad }) => {
       <p>bad {bad}</p>
       <p>all {all}</p>
       <p>average {average}</p>
+      <p>positive {positivePercent} %</p>
     </>
   )
 }
